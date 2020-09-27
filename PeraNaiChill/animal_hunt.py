@@ -151,11 +151,11 @@ while running:
     # RGB = Red, Green, Blue
     screen.fill((0, 0, 0))
     screen.blit(background, (0, 0))
-    font1 = pygame.font.SysFont('Calibri', 10, True, True)
+    font1 = pygame.font.SysFont('Calibri', 15, True, True)
     Instructions1 = font1.render('Space_key = shoot ', 1, (0, 0, 0))
     Instructions2 = font1.render('right & left arrow = navigation ', 1, (0, 0, 0))
-    screen.blit(Instructions1, (670, 15))
-    screen.blit(Instructions2, (670, 25))
+    screen.blit(Instructions1, (600, 15))
+    screen.blit(Instructions2, (600, 30))
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -205,8 +205,10 @@ while running:
         if enemy_one_y[i] > 340:
             for j in range(num_of_enemies):
                 enemy_one_y[j] = 2000
-            game_over_text()
-            break
+                game_over_text()
+                running = False
+
+
 
         enemy_one_x[i] += enemy_one_x_change[i]
         if enemy_one_x[i] <= 0:
@@ -223,7 +225,9 @@ while running:
             for j in range(num_of_enemies):
                 enemy_two_y[j] = 2000
                 game_over_text()
-                break
+                running = False
+
+
 
         enemy_two_x[i] += enemy_two_x_change[i]
         if enemy_two_x[i] <= 0:

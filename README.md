@@ -15,7 +15,7 @@ Level 3 -- Get Pera out of the Maze
 Level 4 -- Pera goes animal hunting
 
 
-Player will start playing from Level 1. As Pera succeeds a level he can go to the new level with challenging and exciting new task. After succeeding the level, Pera can go to the next level. After finishing all the levels he can finally escape from the land.
+Player will start playing from Level 1. As Pera succeeds a level he can go to the new level with challenging and exciting new task. After succeeding the level, Pera can go to the next level. If he fails, then he has to repeat the level again to succeed. After finishing all the levels he can finally escape from the land.
 
 
 

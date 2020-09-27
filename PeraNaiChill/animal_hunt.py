@@ -15,6 +15,7 @@ background = pygame.image.load('data/animal_hunt_data/animal_hunt_bg.png')
 background = pygame.transform.rotozoom(background, 0, 0.54)
 
 
+
 # Sound
 mixer.music.load("data/animal_hunt_data/background.wav")
 mixer.music.play(-1)
@@ -143,12 +144,19 @@ def isCollision(enemy_x, enemy_y, bulletX, bulletY):
 
 # Game Loop
 running = True
+# Background Image
+
 while running:
 
     # RGB = Red, Green, Blue
     screen.fill((0, 0, 0))
-    # Background Image
     screen.blit(background, (0, 0))
+    font1 = pygame.font.SysFont('Calibri', 10, True, True)
+    Instructions1 = font1.render('Space_key = shoot ', 1, (0, 0, 0))
+    Instructions2 = font1.render('right & left arrow = navigation ', 1, (0, 0, 0))
+    screen.blit(Instructions1, (670, 15))
+    screen.blit(Instructions2, (670, 25))
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -226,11 +234,6 @@ while running:
             enemy_two_x_change[i] = -4
             enemy_two_y[i] += enemy_two_y_change[i]
             enemy_two_img[i] = pygame.transform.flip(enemy_two_img[i], True, False)
-
-
-
-
-
 
         # Collision
         collision1 = isCollision(enemy_one_x[i], enemy_one_y[i], bulletX, bulletY)

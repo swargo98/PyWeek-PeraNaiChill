@@ -483,6 +483,7 @@ def main():
     isGameOver = False
     running = True
     end = False
+    levelend = False
 
     # fading
     i = 0
@@ -496,7 +497,7 @@ def main():
                 running = False
 
         if end == True :
-            return True
+            return levelend
 
         if start == True:
             createInstances()
@@ -576,10 +577,12 @@ def main():
                             isGameOver = False
                             breakLoop = False
                             end = True
+                            levelend = True
                         elif key_name == 'm':
                             isGameOver = False
                             breakLoop = False
                             end = True
+                            levelend = False
 
 
 

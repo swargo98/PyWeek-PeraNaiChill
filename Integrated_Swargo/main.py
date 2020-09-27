@@ -61,12 +61,31 @@ while running:
                     start = 0
                     breakLoop = False
                     level1 = 1
+
     elif level1 == 1:
-        level1end = runMaze.main()
+        level1end = peranaichill_running.main()
         if level1end == True:
             level1 = 0
-            #level2 = 1
+            level3 = 1
+        else:
+            level1 = 0
             start = 1
+
+
+    elif level3 == 1:
+        level3end = runMaze.main()
+        if level3end == True:
+            level3 = 0
+            level4 = 1
+        else:
+            level3 = 0
+            start = 1
+
+    elif level4 == 1:
+        level4end = animal_hunt.main()
+        if level4end == True:
+            start = 1
+
 
 
 

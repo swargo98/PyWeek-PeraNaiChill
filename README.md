@@ -1,7 +1,7 @@
 # PyWeek-PeraNaiChill
 
 ## How to play the game
-Make Sure You have Pygame installed in your virtual environment. Clone this repository and go to Integrated_Swargo->main.py and run the script, the game will start.
+Make Sure You have Pygame installed in your virtual environment(requirements.txt). Clone this repository and go to Integrated_Swargo->main.py and run the script, the game will start.
 The charecter name is Pera. Player has to play 4 games to help Pera get out the island.
 
 The game consists of 4 levels-

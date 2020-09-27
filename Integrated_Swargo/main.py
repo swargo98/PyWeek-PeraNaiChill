@@ -3,6 +3,7 @@ from pygame import mixer
 from gamelib import peranaichill_running
 from gamelib import runMaze
 from gamelib import animal_hunt
+from gamelib import puzzler
 
 #peranaichill_running.main()
 #runMaze.main()
@@ -77,16 +78,26 @@ while running:
                     score = 0
                     start = 0
                     breakLoop = False
-                    level1 = 1
+                    level4 = 1
 
     elif level1 == 1:
         level1end = peranaichill_running.main()
 
         if level1end == True:
             level1 = 0
-            level3 = 1
+            level2 = 1
         else:
             level1 = 0
+            start = 1
+
+    elif level2 == 1:
+        level2end = puzzler.main()
+
+        if level2end == True:
+            level2 = 0
+            level3 = 1
+        else:
+            level2 = 0
             start = 1
 
 

@@ -577,7 +577,7 @@ def main():
             waterfall_group.update()
             miniPlayer.update(player.abs_x, player.abs_y)
 
-            # Fill background with black color
+            # Fill background with  color
             window.fill((255,255,255))
 
 

@@ -482,6 +482,7 @@ def main():
     start = True
     isGameOver = False
     running = True
+    end = False
 
     # fading
     i = 0
@@ -493,6 +494,9 @@ def main():
                     (event.type == pygame.KEYDOWN \
                      and (event.key == pygame.K_ESCAPE or event.key == pygame.K_q)):
                 running = False
+
+        if end == True :
+            return True
 
         if start == True:
             createInstances()
@@ -541,13 +545,17 @@ def main():
                 Point= font1.render('Treasures : ' + str(player.treasureCount), 1, (0, 0, 0))
                 Retry = font1.render('Press P to Play Again', 1, (0, 0, 0))
                 Quit = font1.render('Press Q to Quit', 1, (0, 0, 0))
+                NextLevel = font1.render('Press A to go to next Level', 1, (0, 0, 0))
+                Menu = font1.render('Press M to go to Main Menu', 1, (0, 0, 0))
                 window.blit(Point, (300, 120))
                 if Fail == False:
                     window.blit(Text, (250, 200))
+                    window.blit(NextLevel,(200,250))
                 else:
                     window.blit(font1.render('You have not found all treasures!!', 1, (0, 0, 0)), (220,200))
                 window.blit(Retry, (300, 350))
                 window.blit(Quit, (300, 400))
+                window.blit(Menu,(300,450))
                 clear_maze()
                 for event in pygame.event.get():
                     if (event.type == pygame.QUIT) or \
@@ -563,6 +571,15 @@ def main():
                             isGameOver = False
                             start = True
                             breakLoop = False
+                        elif key_name == 'a':
+                            running = False
+                            isGameOver = False
+                            breakLoop = False
+                            end = True
+                        elif key_name == 'm':
+                            isGameOver = False
+                            breakLoop = False
+                            end = True
 
 
 

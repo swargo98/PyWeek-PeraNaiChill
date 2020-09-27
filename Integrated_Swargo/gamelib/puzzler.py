@@ -153,8 +153,8 @@ def start():
    f=1
    global game_over, image
    game_over = False
-   level = 1
-   img = img_list[level]
+   level = 2
+   img = img_list[f]
    image = pygame.image.load("data/puzzler/Res/"+img)
 
    #self.gameWindow.fill((190,190,190))

@@ -226,9 +226,12 @@ def main():
                mouse_pos = pygame.mouse.get_pos()
                #print("HI")
 
-               c = mouse_pos[0]
-               r = mouse_pos[1]
-
+               c = int(mouse_pos[0] / tile_width)
+               r = int(mouse_pos[1] / tile_height)
+               
+               if(c > 3 or r > 3):
+                  continue
+                  
                if c == emptyc and r == emptyr:
                   continue
                else:

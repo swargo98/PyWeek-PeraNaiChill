@@ -26,7 +26,7 @@ def initialize():
    start_background = pygame.image.load("data/puzzler/start_background.png")
    gameWindow.blit(start_background, (0, 0))
    pygame.display.update()
-   time.sleep(20)
+   time.sleep(5)
 
    img_list = [0, "island1.jpg"]
    background = pygame.image.load("data/puzzler/background.png")

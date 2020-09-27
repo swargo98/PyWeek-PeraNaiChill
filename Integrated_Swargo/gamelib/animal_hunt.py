@@ -206,8 +206,6 @@ def main():
             # 5 = 5 + -0.1 -> 5 = 5 - 0.1
             # 5 = 5 + 0.1
 
-            if end == True:
-                return True
 
             playerX += playerX_change
             if playerX <= 0:
@@ -253,6 +251,7 @@ def main():
                         enemy_two_y[j] = 2000
                         game_over_text()
                         running = False
+                        end = True
                         return True,str(ship_value+fire_value)
 
 

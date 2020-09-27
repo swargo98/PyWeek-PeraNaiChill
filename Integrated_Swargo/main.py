@@ -65,6 +65,7 @@ while running:
                 scoreText = font1.render('Score: ' + score, 1, (0, 0, 0))
                 window.blit(scoreText, (400, 200))
 
+
             for event in pygame.event.get():
                 if (event.type == pygame.QUIT) or \
                         (event.type == pygame.KEYDOWN \
@@ -72,7 +73,8 @@ while running:
                     running = False
                     start = 0
                     breakLoop = False
-                if (event.type == pygame.KEYDOWN):
+                if event.type == pygame.KEYDOWN:
+                    score = 0
                     start = 0
                     breakLoop = False
                     level1 = 1

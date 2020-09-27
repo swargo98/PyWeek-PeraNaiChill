@@ -132,10 +132,10 @@ class Player(pygame.sprite.Sprite):
                 self.direction = 'U'
 
             # If all direction keys are not pressed
-            else:
-                self.hSpeed = 0
-                self.vSpeed = 0
-                self.direction = 'N'
+        else:
+            self.hSpeed = 0
+            self.vSpeed = 0
+            self.direction = 'N'
 
         last_side = self.side
         if self.direction == 'L' or self.direction == 'R':
@@ -231,6 +231,7 @@ class Player(pygame.sprite.Sprite):
 
     def isCollided_with_treasures(self, treasures):
         if (pygame.sprite.spritecollide(self, treasures, True)):
+            treasure_sound.play()
             self.treasureCount += 1
 
     def isCollided_with_waterfall(self, waterfall):
@@ -475,7 +476,7 @@ font1 = pygame.font.SysFont('Calibri',24,True,True)
 player_image = pygame.image.load('Image/player.png').convert_alpha()
 bg = pygame.image.load('Image/BG.png').convert_alpha()
 
-waterfall_sound = pygame.mixer.Sound(os.path.join('audios','POL-downpour.wav'))
+treasure_sound = pygame.mixer.Sound(os.path.join('audios','treasure_sound.wav'))
 
 def main():
     start = True
@@ -503,11 +504,13 @@ def main():
                 Text = font1.render('Level 3 ', 1, (0, 0, 0))
                 StartText = font1.render('Press any key to start ', 1, (0, 0, 0))
                 Instructions1 = font1.render('Find the waterfall to pass the level ', 1, (0, 0, 0))
-                Instructions2 = font1.render('There are 10 treasures along the way', 1, (0, 0, 0))
-                window.blit(Text, (300, 50))
-                window.blit(StartText, (250, 100))
-                window.blit(Instructions1, (220, 300))
-                window.blit(Instructions2, (220, 350))
+                Instructions2 = font1.render('There are 10 treasures along the way. Find all of them ', 1, (0, 0, 0))
+                Instructions3 = font1.render('Press key UP, DOWN, LEFT, RIGHT to move', 1, (0, 0, 0))
+                window.blit(Text, (450, 50))
+                window.blit(StartText, (380, 100))
+                window.blit(Instructions1, (250, 200))
+                window.blit(Instructions2, (220, 250))
+                window.blit(Instructions3, (240, 300))
                 pygame.display.flip()
                 for event in pygame.event.get():
                     if (event.type == pygame.QUIT) or \

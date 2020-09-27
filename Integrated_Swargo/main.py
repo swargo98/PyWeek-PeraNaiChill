@@ -75,7 +75,7 @@ while running:
                 if (event.type == pygame.KEYDOWN):
                     start = 0
                     breakLoop = False
-                    level3 = 1
+                    level1 = 1
 
     elif level1 == 1:
         level1end = peranaichill_running.main()

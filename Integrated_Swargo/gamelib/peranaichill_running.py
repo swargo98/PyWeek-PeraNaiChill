@@ -396,9 +396,7 @@ def main():
             #p1.draw_player(win)
             pygame.display.flip()
             for event in pygame.event.get():
-                if (event.type == pygame.QUIT) or \
-                        (event.type == pygame.KEYDOWN \
-                         and (event.key == pygame.K_ESCAPE or event.key == pygame.K_q)):
+                if (event.type == pygame.QUIT):
                     run = False
                     pygame.quit()  # Quit the game
                     quit()
@@ -422,12 +420,13 @@ def main():
             win.blit(picture, (272, 200))
             pygame.display.flip()
             for event in pygame.event.get():
-                if (event.type == pygame.QUIT) or \
-                        (event.type == pygame.KEYDOWN \
-                         and (event.key == pygame.K_ESCAPE or event.key == pygame.K_q)):
+                if (event.type == pygame.QUIT):
                     run = False
+                    #return True
                     pygame.quit()  # Quit the game
                     quit()
+                if event.key == pygame.K_q:
+                    return True
                 if (event.type == pygame.KEYDOWN):
                     if event.key == pygame.K_s:
                         main()

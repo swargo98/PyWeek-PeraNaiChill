@@ -61,11 +61,12 @@ while running:
             window.blit(player_image, (50, 150))
             StartText = font1.render('Press any key to start ', 1, (0, 0, 0))
             window.blit(StartText, (450, 50))
-            pygame.display.flip()
-            if GameEnd == 1:
-                scoreText = font1.render('Score: ' + score, 1, (0, 0, 0))
-                window.blit(scoreText, (400, 200))
 
+            if GameEnd == 1:
+                window.blit(font1.render('Game Over ', 1, (0, 0, 0)),(550,250))
+                scoreText = font1.render('Score: ' + score, 1, (0, 0, 0))
+                window.blit(scoreText, (500, 200))
+            pygame.display.flip()
 
             for event in pygame.event.get():
                 if (event.type == pygame.QUIT) or \
@@ -78,7 +79,8 @@ while running:
                     score = 0
                     start = 0
                     breakLoop = False
-                    level4 = 1
+                    GameEnd = 0
+                    level1 = 1
 
     elif level1 == 1:
         level1end = peranaichill_running.main()
@@ -117,6 +119,7 @@ while running:
             start = 1
             GameEnd = 1
             level4 = 0
+            level4end = False
 
 
 

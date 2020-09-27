@@ -551,13 +551,13 @@ def main():
                 Menu = font1.render('Press M to go to Main Menu', 1, (0, 0, 0))
                 window.blit(Point, (300, 120))
                 if Fail == False:
-                    window.blit(Text, (250, 200))
-                    window.blit(NextLevel,(200,250))
+                    window.blit(Text, (300, 200))
+                    window.blit(NextLevel,(300,250))
                 else:
                     window.blit(font1.render('You have not found all treasures!!', 1, (0, 0, 0)), (220,200))
-                window.blit(Retry, (300, 350))
-                window.blit(Quit, (300, 400))
-                window.blit(Menu,(300,450))
+                window.blit(Retry, (300, 300))
+                window.blit(Quit, (300, 350))
+                window.blit(Menu,(300,400))
                 clear_maze()
                 for event in pygame.event.get():
                     if (event.type == pygame.QUIT) or \

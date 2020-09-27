@@ -497,6 +497,7 @@ def main():
                 running = False
 
         if end == True :
+            print(levelend)
             return levelend
 
         if start == True:
@@ -537,7 +538,7 @@ def main():
         elif isGameOver == True :
             breakLoop = True
             Fail = False
-            if player.treasureCount < 10 :
+            if player.treasureCount < 1:
                 Fail = True
             while breakLoop:
                 window.blit(bg, (0, 0))
@@ -577,12 +578,12 @@ def main():
                             isGameOver = False
                             breakLoop = False
                             end = True
-                            levelend = True
+                            return True
                         elif key_name == 'm':
                             isGameOver = False
                             breakLoop = False
                             end = True
-                            levelend = False
+                            return False
 
 
 

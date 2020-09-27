@@ -1,4 +1,5 @@
 import pygame
+from pygame import mixer
 from gamelib import peranaichill_running
 from gamelib import runMaze
 from gamelib import animal_hunt
@@ -10,13 +11,12 @@ from gamelib import animal_hunt
 pygame.init()
 
  # size of the game window
-win_width, win_height = 1280, 720
+win_width, win_height = 800, 480
 
 # Font for game over window
 FONT = "freesandsbold.ttf"
 
-win_width = 800
-win_height = 480
+
 win_size = win_width, win_height
 
 window = pygame.display.set_mode(win_size)
@@ -34,7 +34,16 @@ level2 = 0
 level3 = 0
 font1 = pygame.font.SysFont('Calibri',24,True,True)
 
+# Sound
+mixer.music.load("data/audios/bgmusic.wav")
+mixer.music.play(-1)
+
+player_image = pygame.image.load('data/Image/player.png').convert_alpha()
+bg = pygame.image.load('data/tileset_1(main)/BG/BG1.jpg').convert_alpha()
+
 running = True
+GameEnd  = 0
+score = 0
 
 while running:
     for event in pygame.event.get():
@@ -47,9 +56,15 @@ while running:
         breakLoop = True
         window.fill((255,255,255))
         while breakLoop:
+            window.blit(bg, (0, 0))
+            window.blit(player_image, (50, 150))
             StartText = font1.render('Press any key to start ', 1, (0, 0, 0))
             window.blit(StartText, (450, 50))
             pygame.display.flip()
+            if GameEnd == 1:
+                scoreText = font1.render('Score: ' + score, 1, (0, 0, 0))
+                window.blit(scoreText, (400, 200))
+
             for event in pygame.event.get():
                 if (event.type == pygame.QUIT) or \
                         (event.type == pygame.KEYDOWN \
@@ -60,10 +75,11 @@ while running:
                 if (event.type == pygame.KEYDOWN):
                     start = 0
                     breakLoop = False
-                    level1 = 1
+                    level3 = 1
 
     elif level1 == 1:
         level1end = peranaichill_running.main()
+
         if level1end == True:
             level1 = 0
             level3 = 1
@@ -82,9 +98,12 @@ while running:
             start = 1
 
     elif level4 == 1:
-        level4end = animal_hunt.main()
+        level4end,score = animal_hunt.main()
+        print(score)
         if level4end == True:
             start = 1
+            GameEnd = 1
+            level4 = 0
 
 
 

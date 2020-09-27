@@ -17,7 +17,7 @@ char_path = "data/character"
 obj_path = "data/tileset_1(main)/Object/"
 tile_path = "data/tileset_1(main)/Tiles/"
 
-target = 10
+target = 50
 lives = 5
 
 bg = imload(os.path.join(bg_path,'BG.png')).convert()

@@ -69,12 +69,12 @@ while running:
             #window.blit(player_image, (50, 150))
             StartText = font1.render('Press any key to start ', 1, (0, 0, 0))
             window.blit(StartText, (450, 50))
-            pygame.display.flip()
+
             if GameEnd == 1:
                 scoreText = font1.render('Score: ' + score, 1, (0, 0, 0))
-                window.blit(scoreText, (400, 200))
+                window.blit(scoreText, (400, 300))
 
-
+            pygame.display.flip()
             for event in pygame.event.get():
                 if (event.type == pygame.QUIT) or \
                         (event.type == pygame.KEYDOWN \

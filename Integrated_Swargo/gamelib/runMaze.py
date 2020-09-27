@@ -538,7 +538,7 @@ def main():
         elif isGameOver == True :
             breakLoop = True
             Fail = False
-            if player.treasureCount < 1:
+            if player.treasureCount < 10:
                 Fail = True
             while breakLoop:
                 window.blit(bg, (0, 0))

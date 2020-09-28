@@ -37,33 +37,22 @@ enemy_one_x = []
 enemy_one_y = []
 enemy_one_x_change = []
 enemy_one_y_change = []
-num_of_enemies = 3
-
-enemy_one_image = pygame.image.load('data/animal_hunt_data/PicsArt_09-25-02.06.32.png')
-enemy_one_image = pygame.transform.rotozoom(enemy_one_image, 0, 0.08)
-enemy_one_image = pygame.transform.flip(enemy_one_image, True, False)
-for i in range(num_of_enemies):
-    enemy_one_img.append(enemy_one_image)
-    enemy_one_x.append(random.randint(0, 736))
-    enemy_one_y.append(random.randint(50, 150))
-    enemy_one_x_change.append(4)
-    enemy_one_y_change.append(10)
 
 enemy_two_img = []
 enemy_two_x = []
 enemy_two_y = []
 enemy_two_x_change = []
 enemy_two_y_change = []
+num_of_enemies = 3
+
+enemy_one_image = pygame.image.load('data/animal_hunt_data/PicsArt_09-25-02.06.32.png')
+enemy_one_image = pygame.transform.rotozoom(enemy_one_image, 0, 0.08)
+enemy_one_image = pygame.transform.flip(enemy_one_image, True, False)
+
 
 enemy_two_image = pygame.image.load('data/animal_hunt_data/PicsArt_09-25-02.05.07.png')
 enemy_two_image = pygame.transform.rotozoom(enemy_two_image, 0, 0.25)
 
-for i in range(num_of_enemies):
-    enemy_two_img.append(enemy_two_image)
-    enemy_two_x.append(random.randint(0, 736))
-    enemy_two_y.append(random.randint(150, 200))
-    enemy_two_x_change.append(4)
-    enemy_two_y_change.append(40)
 
 # Bullet
 
@@ -79,10 +68,7 @@ bulletX_change = 0
 bulletY_change = 10
 bullet_state = "ready"
 
-# Score
 
-fire_value = 0
-ship_value = 0
 font = pygame.font.Font('freesansbold.ttf', 32)
 
 textX = 10
@@ -120,7 +106,7 @@ def player(x, y):
     screen.blit(playerImg, (x, y))
 
 
-def enemy(x1, y1, x2, y2, i):
+def enemy(enemy_one_img,enemy_two_img,x1, y1, x2, y2, i):
     screen.blit(enemy_one_img[i], (x1, y1))
     screen.blit(enemy_two_img[i], (x2, y2))
 
@@ -152,6 +138,43 @@ def main():
         # RGB = Red, Green, Blue
         if start == 1:
             breakLoop = True
+
+            enemy_one_img = []
+            enemy_one_x = []
+            enemy_one_y = []
+            enemy_one_x_change = []
+            enemy_one_y_change = []
+
+            enemy_two_img = []
+            enemy_two_x = []
+            enemy_two_y = []
+            enemy_two_x_change = []
+            enemy_two_y_change = []
+
+            #INITIALIZING ENEMY ONE CO-ORDINATES
+            for i in range(num_of_enemies):
+                enemy_one_img.append(enemy_one_image)
+                enemy_one_x.append(random.randint(0, 736))
+                enemy_one_y.append(random.randint(50, 150))
+                enemy_one_x_change.append(4)
+                enemy_one_y_change.append(10)
+
+            #INITIALIZING ENEMY TWO CO-ORDINATES
+            for i in range(num_of_enemies):
+                enemy_two_img.append(enemy_two_image)
+                enemy_two_x.append(random.randint(0, 736))
+                enemy_two_y.append(random.randint(150, 200))
+                enemy_two_x_change.append(4)
+                enemy_two_y_change.append(40)
+
+            # Score
+
+            fire_value = 0
+            ship_value = 0
+
+
+
+
             while breakLoop:
                 screen.blit(bg, (0, 0))
                 screen.blit(player_image, (50, 150))
@@ -229,9 +252,12 @@ def main():
                 # Game Over
                 if enemy_one_y[i] > 340:
                     for j in range(num_of_enemies):
+                        #SOURCE OF PROBLEM
                         enemy_one_y[j] = 2000
                         game_over_text()
                         running = False
+                        end = True
+                        return True, str(ship_value + fire_value)
 
 
 
@@ -248,6 +274,7 @@ def main():
                 # Game Over
                 if enemy_two_y[i] > 340:
                     for j in range(num_of_enemies):
+                        #SOURCE OF PROBLEM
                         enemy_two_y[j] = 2000
                         game_over_text()
                         running = False
@@ -283,11 +310,7 @@ def main():
                         enemy_two_x[i] = random.randint(0, 736)
                         enemy_two_y[i] = random.randint(50, 150)
 
-
-
-
-
-                enemy(enemy_one_x[i], enemy_one_y[i], enemy_two_x[i], enemy_two_y[i], i)
+                enemy(enemy_one_img,enemy_two_img,enemy_one_x[i], enemy_one_y[i], enemy_two_x[i], enemy_two_y[i], i)
 
             # Bullet Movement
             if bulletY <= 0:

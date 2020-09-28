@@ -508,11 +508,11 @@ def main():
             while breakLoop:
                 window.blit(cavebg, (0, 0))
                 window.blit(player_image, (50, 150))
-                Text = font1.render('Level 3 ', 1, (0, 0, 0))
-                StartText = font1.render('Press any key to start ', 1, (0, 0, 0))
-                Instructions1 = font1.render('Find the waterfall to pass the level ', 1, (0, 0, 0))
-                Instructions2 = font1.render('There are 10 treasures along the way. Find all of them ', 1, (0, 0, 0))
-                Instructions3 = font1.render('Press key UP, DOWN, LEFT, RIGHT to move', 1, (0, 0, 0))
+                Text = font1.render('Level 3 ', 1, (255,255,255))
+                StartText = font1.render('Press any key to start ', 1, (255,255,255))
+                Instructions1 = font1.render('Find the waterfall to pass the level ', 1, (255,255,255))
+                Instructions2 = font1.render('There are 10 treasures along the way. Find all of them ', 1, (255,255,255))
+                Instructions3 = font1.render('Press key UP, DOWN, LEFT, RIGHT to move', 1, (255,255,255))
                 window.blit(Text, (450, 50))
                 window.blit(StartText, (380, 100))
                 window.blit(Instructions1, (250, 200))
@@ -621,7 +621,7 @@ def main():
             miniWalls_group.draw(window)
             miniPlayer.draw(window)
 
-            scoreText = font1.render('Treasures : ' + str(player.treasureCount), 1, (0 , 0, 0))
+            scoreText = font1.render('Treasures : ' + str(player.treasureCount), 1, (255,255,255))
             window.blit(scoreText, (10, 10))
 
             if player.winGame == True :
@@ -634,4 +634,4 @@ def main():
 
     pygame.quit()
 
-#main()
+#random = main()

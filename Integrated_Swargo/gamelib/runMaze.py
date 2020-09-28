@@ -575,11 +575,12 @@ def main():
                             start = True
                             breakLoop = False
                         elif key_name == 'a':
-                            running = False
-                            isGameOver = False
-                            breakLoop = False
-                            end = True
-                            return True
+                            if Fail == False:
+                                running = False
+                                isGameOver = False
+                                breakLoop = False
+                                end = True
+                                return True
                         elif key_name == 'm':
                             isGameOver = False
                             breakLoop = False

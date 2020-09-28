@@ -72,6 +72,8 @@ while running:
 
             if GameEnd == 1:
                 scoreText = font1.render('Score: ' + score, 1, (0, 0, 0))
+                gameover = font1.render('Game Over', 1, (0, 0, 0))
+                window.blit(gameover,(400,250))
                 window.blit(scoreText, (400, 300))
 
             pygame.display.flip()

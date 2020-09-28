@@ -43,7 +43,7 @@ def initialize():
 
    gameWindow.fill(white)
    gameWindow.blit(background, (0, 0))
-   gameWindow.blit(sprite, (650, 320))
+   gameWindow.blit(sprite, (620,180))
    pygame.display.update()
 
    level = 2
@@ -102,7 +102,7 @@ def shift (c, r) :
    global emptyc, emptyr, empty_tile, tile_width, tile_height
    rect_color = (255,255,255)
    gameWindow.blit(tiles[(c, r)][0],(emptyc*tile_width, emptyr*tile_height))
-   gameWindow.blit(sprite, (650, 320))
+   gameWindow.blit(sprite, (620, 180))
 
    gameWindow.blit(
         tiles[empty_tile][0],
@@ -199,7 +199,7 @@ def main():
    while True:
       if game_over:
          gameWindow.blit(background, (0, 0))
-         gameWindow.blit(sprite, (650, 320))
+         gameWindow.blit(sprite, (620,180))
          labels(400, 200, "Congratulations!! Well played, Press 'q' to continue",(0,0,255),30)
          pygame.display.update()
          #time.sleep(15)
@@ -223,7 +223,7 @@ def main():
             if not started:
                #self.gameWindow.fill((190, 190, 190), (40, 400, 350, 40))
                gameWindow.blit(background, (0, 0))
-               gameWindow.blit(sprite, (650, 320))
+               gameWindow.blit(sprite, (620, 180))
                shuffle()
                labels(300,425,"Right click to see Solution",(253,232,39))
                started = True

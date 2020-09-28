@@ -203,7 +203,7 @@ while running:
             startimg = pygame.transform.scale(startimg, (800, 480))
             window.blit(startimg, (0, 0))
             #window.blit(player_image, (50, 150))
-            tartText = font1.render('Press any key to start', 1, (0, 0, 0))
+            StartText = font1.render('Press any key to start', 1, (0, 0, 0))
             window.blit(StartText, (450, 50))
             pygame.display.flip()
 

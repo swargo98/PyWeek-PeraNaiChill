@@ -475,6 +475,7 @@ waterfallList = loadImageInList('data/Image/Waterfall')
 font1 = pygame.font.SysFont('Calibri',24,True,True)
 player_image = pygame.image.load('data/Image/player.png').convert_alpha()
 bg = pygame.image.load('data/Image/BG.png').convert_alpha()
+cavebg = pygame.image.load('data/Image/cavebg.jpg').convert_alpha()
 
 treasure_sound = pygame.mixer.Sound(os.path.join('data/audios','treasure_sound.wav'))
 
@@ -505,7 +506,7 @@ def main():
             setup_maze()
             breakLoop = True
             while breakLoop:
-                window.blit(bg, (0, 0))
+                window.blit(cavebg, (0, 0))
                 window.blit(player_image, (50, 150))
                 Text = font1.render('Level 3 ', 1, (0, 0, 0))
                 StartText = font1.render('Press any key to start ', 1, (0, 0, 0))
@@ -591,6 +592,7 @@ def main():
 
 
         else:
+            window.blit(cavebg, (0, 0))
             player_group.update(event,walls_group, treasures_group, waterfall_group)
 
             # from player group update -> check if collide with portal to advance to next stage
@@ -599,7 +601,7 @@ def main():
             miniPlayer.update(player.abs_x, player.abs_y)
 
             # Fill background with black color
-            window.fill((255,255,255))
+            #window.fill((255,255,255))
 
 
             # Update view camera

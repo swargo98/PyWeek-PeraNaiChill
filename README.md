@@ -1,18 +1,18 @@
 # PyWeek-PeraNaiChill
 
 ## How to play the game
-Make Sure You have Pygame installed in your virtual environment(requirements.txt). Clone this repository and go to Integrated_Swargo->main.py and run the script, the game will start.
+Make Sure You have Pygame installed in your virtual environment(requirements.txt). Clone this repository and run the main.py script, the game will start.
 The charecter name is Pera. Player has to play 4 games to help Pera get out the island.
 
 The game consists of 4 levels-
 
-Level 1 -- Run Pera Run
+Level 1 -- Run Pera Run (Developed By: Rasman Mubtasim Swargo)
 
-Level 2 -- Pera jumbled in puzzle
+Level 2 -- Pera jumbled in puzzle (Developed By: Tanberul Islam Ruhan)
 
-Level 3 -- Get Pera out of the Maze
+Level 3 -- Get Pera out of the Maze ( Developed By: Mashiat Mustaq)
 
-Level 4 -- Pera goes animal hunting
+Level 4 -- Pera goes animal hunting (Developed By: Tasnim Nishat Islam Manami)
 
 
 Player will start playing from Level 1. As Pera succeeds a level he can go to the new level with challenging and exciting new task. After succeeding the level, Pera can go to the next level. If he fails, then he has to repeat the level again to succeed. After finishing all the levels he can finally escape from the land.

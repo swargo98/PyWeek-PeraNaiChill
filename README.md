@@ -20,9 +20,9 @@ Player will start playing from Level 1. As Pera succeeds a level he can go to th
 
 
 
-Resources
+## Resources
 
-Tileset:
+### Tileset:
 
 https://ansimuz.itch.io/magic-cliffs-environment
 
@@ -30,17 +30,17 @@ https://craftpix.net/freebies/free-swamp-game-tileset-pixel-art/
 
 https://www.gameart2d.com/free-platformer-game-tileset.html
 
-Character:
+### Character:
 
 https://www.gameart2d.com/temple-run---free-sprites.html
 
-SCORES:
+## SCORES:
 Overall: 2.6,
 Fun: 2.5,
 Production: 2.8,
 Innovation: 2.6
 
-Final Reult: 16th out of 25 Teams.
+## Final Reult: 16th out of 25 Teams.
 
 Comments: https://pyweek.org/e/rmst/ratings/
 

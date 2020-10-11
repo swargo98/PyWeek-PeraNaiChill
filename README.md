@@ -33,3 +33,15 @@ https://www.gameart2d.com/free-platformer-game-tileset.html
 Character:
 
 https://www.gameart2d.com/temple-run---free-sprites.html
+
+SCORES:
+Overall: 2.6,
+Fun: 2.5,
+Production: 2.8,
+Innovation: 2.6
+
+Final Reult: 16th out of 25 Teams.
+
+Comments: https://pyweek.org/e/rmst/ratings/
+
+

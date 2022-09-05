@@ -29,7 +29,7 @@ class players(object):
     still = [pygame.image.load(os.path.join(char_path, "Idle__00" + str(x) + '.png')) for x in range(1, 10)]
     death = [pygame.image.load(os.path.join(char_path, "Dead__00" + str(x) + '.png')) for x in range(1, 10)]
     jump = [pygame.image.load(os.path.join(char_path, "Jump__00" + str(x) + '.png')) for x in range(1, 10)]
-    slide = [pygame.image.load(os.path.join(char_path, "slide__00" + str(x) + '.png')) for x in range(1, 10)]
+    slide = [pygame.image.load(os.path.join(char_path, "Slide__00" + str(x) + '.png')) for x in range(1, 10)]
 
     def __init__(self, x, y, width, height):
         self.x = x
